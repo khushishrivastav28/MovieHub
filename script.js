@@ -22,7 +22,7 @@ async function searchMovies(movieName){
 
     try{
     let response = await fetch(`http://www.omdbapi.com/?apikey=50eecabd&s=${encodeURIComponent(movieName)}`);
-    let data = await response.json()
+    let data = await response.json();
     
 
     if(data.Response === "True"){
@@ -154,6 +154,6 @@ hamburger.addEventListener("click" , (e) =>{
     e.stopPropagation();
     options.classList.toggle("hidden");
     options.classList.toggle("flex");
-})
+});
 }
 

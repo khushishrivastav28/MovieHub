@@ -2,7 +2,7 @@ const movieDetail = document.querySelector("#movie-detail");
 const params = new URLSearchParams(location.search)
 const imdbID = params.get("id");
 
-const NO_POSTER ="HTTPS://placehold.co/300x450/18181b/a1a1aa?text=No+Poster";
+const NO_POSTER ="Https://placehold.co/300x450/18181b/a1a1aa?text=No+Poster";
 
 
 if(imdbID){
