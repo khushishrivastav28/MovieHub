@@ -6,7 +6,7 @@ const movieHub = document.querySelector("#movieHub");
 const hamburger = document.querySelector("#hamburger")
 const options = document.querySelector("#options")
 
-const NO_POSTER ="HTTPS://placehold.co/300x450/18181b/a1a1aa?text=No+Poster";
+const NO_POSTER ="https://placehold.co/300x450/18181b/a1a1aa?text=No+Poster";
 
 movieForm.addEventListener("submit" , (e) => {
     e.preventDefault();
@@ -21,12 +21,12 @@ async function searchMovies(movieName){
     movieHub.innerHTML =    `<div class="loader"></div> `
 
     try{
-    let response = await fetch(`http://www.omdbapi.com/?apikey=50eecabd&s=${encodeURIComponent(movieName)}`);
+    let response = await fetch(`https://www.omdbapi.com/?apikey=50eecabd&s=${encodeURIComponent(movieName)}`);
     let data = await response.json();
     
 
     if(data.Response === "True"){
-        displayMovies(data.Search)
+        displayMovies(data.Search);
     }else{
         movieHub.innerHTML=`<p class="col-span-full text-center text-red-400 py-16 text-lg">${data.Error || 'No movies found.'}</p>`
     }

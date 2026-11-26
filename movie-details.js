@@ -2,7 +2,7 @@ const movieDetail = document.querySelector("#movie-detail");
 const params = new URLSearchParams(location.search)
 const imdbID = params.get("id");
 
-const NO_POSTER ="Https://placehold.co/300x450/18181b/a1a1aa?text=No+Poster";
+const NO_POSTER ="https://placehold.co/300x450/18181b/a1a1aa?text=No+Poster";
 
 
 if(imdbID){
@@ -24,7 +24,7 @@ async function searchMovie(imdbID){
     `;
 
     try{
-    let response = await fetch(`http://www.omdbapi.com/?apikey=50eecabd&i=${imdbID}&plot=full`);
+    let response = await fetch(`https://www.omdbapi.com/?apikey=50eecabd&i=${imdbID}&plot=full`);
     let data = await response.json()
     
 
